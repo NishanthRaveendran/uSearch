@@ -10,8 +10,12 @@ array_list = []
 with open('amazonmeta.txt', encoding="utf-8") as f:
     for line in f:
         temp = line.strip()
-        if re.match(r'(?=.*\bASIN\b|\btitle\b|\bgroup\b|\breviews\b|\bsimilar\b)', temp):
+        if re.match(r'(?=.*\bASIN\b|\btitle\b|\bgroup\b|\bsimilar\b)', temp):
             array_list.append(temp)
+        elif re.match(r'(?=.*\breviews\b)', temp):
+            rateIndex = temp.index('avg rating:')
+            tempslice = temp[rateIndex:]
+            array_list.append(tempslice)
 
 indexasin = []
 
@@ -27,11 +31,11 @@ for i in range(len(indexasin) - 1):
 combined.append(array_list[indexasin[-1]:])
 
 for i in combined:
-    strings.append(', '.join(i) + "\n")
-
+    if(len(i) == 5):
+        strings.append(', '.join(i) + "\n")
 
 # Creates a new preprocessed text file
-outF = open("productData.txt", "w", encoding="utf-8")
+outF = open("productdata2.txt", "w", encoding="utf-8")
 for line in strings:
   outF.write(line)
 outF.close()

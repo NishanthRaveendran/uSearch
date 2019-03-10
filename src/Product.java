@@ -6,22 +6,22 @@ package uSearch;
  * average rating.
  */
 public class Product {
-	private int asin;
+	private String asin;
 	private String title;
 	private String group;
-	private int[] similar;
+	private String[] similar;
 	private double rating;
 
 	/**
 	 * Used to construct an instance of Product.
 	 * 
-	 * @param asin Integer product id (asin)
+	 * @param asin String product id (asin)
 	 * @param title String title of the product
 	 * @param group String group of the product
-	 * @param similar List of Integer similar products
+	 * @param similar List of Strings similar products
 	 * @param rating Double product rating	
 	 */
-	public Product(int asin, String title, String group, int[] similar, double rating) {
+	public Product(String asin, String title, String group, String[] similar, double rating) {
 		this.asin = asin;
 		this.title = title;
 		this.group = group;
@@ -35,7 +35,7 @@ public class Product {
 	 * 
 	 * @return Returns asin
 	 */
-	public int getAsin() {
+	public String getAsin() {
 		return this.asin;
 	}
 
@@ -62,7 +62,7 @@ public class Product {
 	 * 
 	 * @return Returns similar
 	 */
-	public int[] getSimilar() {
+	public String[] getSimilar() {
 		return this.similar;
 	}
 
@@ -82,29 +82,29 @@ public class Product {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Asin: %d", asin);
+		return String.format("Asin: %s", asin);
 	}
 
 	/**
-	 * Used to compare this product to another Product by their asin
+	 * Used to compare this product to another product by their asin
 	 * 
-	 * @param that Other instance of the Product that will be compared
+	 * @param that Other instance of the product that will be compared
 	 * @return -1 if this product's asin is less than the passed in product's asin
 	 * 			1 if this product's asin is greater than the passed in product's asin
 	 * 			0 if this product's asin is equal to the passed in product's asin
 	 */
 	public int compareAsin(Product that) {
-		if (this.asin < that.getAsin())
+		if (this.asin.compareTo(that.getAsin()) < 0)
 			return -1;
-		if (this.asin > that.getAsin())
+		if (this.asin.compareTo(that.getAsin()) > 0)
 			return 1;
 		return 0;
 	}
 
 	/**
-	 * Used to compare this product to another Product by their title
+	 * Used to compare this product to another product by their title
 	 * 
-	 * @param that Other instance of the Product that will be compared
+	 * @param that Other instance of the product that will be compared
 	 * @return -1 if this product's title is less than the passed in product's title, 
 	 * 			1 if this product's title is greater than the passed in product's title, 
 	 * 			result of the comparison by asin
@@ -118,9 +118,9 @@ public class Product {
 	}
 
 	/**
-	 * Used to compare this product to another Product by their rating
+	 * Used to compare this product to another product by their rating
 	 * 
-	 * @param that Other instance of the Product that will be compared
+	 * @param that Other instance of the product that will be compared
 	 * @return -1 if this product's rating is less than the passed in product's rating, 
 	 * 			1 if this product's rating is greater than the passed in product's rating, 
 	 * 			result of the comparison by asin

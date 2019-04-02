@@ -12,7 +12,7 @@ public class ProductTest {
 	}
 	
 	@Test
-	void testProductData() {
+	public void testProductData() {
 		String[] similar1 = { "Product1", "Product2" };
 		Product product1 = new Product("P1", "Product1", "Book", similar1, 4.5);
 		assertTrue(product1.getAsin().equals("P1"));
@@ -23,7 +23,7 @@ public class ProductTest {
 	}
 
 	@Test
-	void testCompareASIN() {
+	public void testCompareASIN() {
 		String[] similar1 = { "Product1", "Product2" };
 		Product product1 = new Product("P1", "Product1", "Book", similar1, 4.5);
 		Product product2 = new Product("P2", "Product1", "Book", similar1, 4.5);
@@ -34,7 +34,7 @@ public class ProductTest {
 	}
 
 	@Test
-	void testCompareTitle() {
+	public void testCompareTitle() {
 		String[] similar1 = { "Product1", "Product2" };
 		Product product1 = new Product("P1", "Product1", "Book", similar1, 4.5);
 		Product product2 = new Product("P2", "Product2", "Book", similar1, 4.5);
@@ -45,7 +45,7 @@ public class ProductTest {
 	}
 
 	@Test
-	void testCompareRating() {
+	public void testCompareRating() {
 		String[] similar1 = { "Product1", "Product2" };
 		Product product1 = new Product("P2", "Product1", "Book", similar1, 4.5);
 		Product product2 = new Product("P1", "Product2", "Book", similar1, 5.5);

@@ -1,8 +1,6 @@
 package uSearch;
 
 import static org.junit.Assert.*;
-
-import org.junit.Before;
 import org.junit.Test;
 
 public class SearchTest {
@@ -20,34 +18,28 @@ public class SearchTest {
 	
 	Product[] LX = {P1,P2,P3,P4};
 	Review[] RX = {R1,R2,R3,R4};
-	
-	@Before
-	public void setUp() throws Exception {
-	}
 
 	@Test
-	void testSearchProductAsin() {
+	public void testSearchProductAsin() {
 		int i = Search.searchProductAsin("P1", LX);
-		assertTrue(i == 0);
-		
+		assertTrue(i == 0);		
 	}
 	
 	@Test
-	void testSearchProductTitle() {
+	public void testSearchProductTitle() {
 		int i = Search.searchProductTitle("Product4", LX);
 		assertTrue(i == 2);
 	}
 	
 	@Test
-	void testSearchProductGroup() {
+	public void testSearchProductGroup() {
 		int i = Search.searchProductGroup("Book2", LX);
 		assertTrue(i == 1);
 	}
 	
 	@Test
-	void testSearchReviewAsin() {
+	public void testSearchReviewAsin() {
 		int i = Search.searchReviewAsin("P4", RX);
 		assertTrue(i == 3);
 	}
-
 }

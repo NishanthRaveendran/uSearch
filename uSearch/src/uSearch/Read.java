@@ -22,8 +22,7 @@ public class Read {
 			      
 			while ((str = in.readLine()) != null) {
 			    products[index++] = str;
-			}
-			        
+			}			        
 	                in.close();
 		    } 
 		    catch (UnsupportedEncodingException e) 
@@ -40,6 +39,5 @@ public class Read {
 		    }
 	
 		return products;
-	}
-	
+	}	
 }

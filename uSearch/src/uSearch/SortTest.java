@@ -1,8 +1,6 @@
 package uSearch;
 
 import static org.junit.Assert.*;
-
-import org.junit.Before;
 import org.junit.Test;
 
 public class SortTest {
@@ -30,7 +28,6 @@ public class SortTest {
 		 return true;
 	}
 
-	
 	String[] similar1 = { "Product1", "Product2" };
 	Product P1 = new Product("P1", "Product2", "Book", similar1, 9.5);
 	Product P2 = new Product("P5", "Product4", "Book", similar1, 8.5);
@@ -41,27 +38,21 @@ public class SortTest {
 	Product[] L2 = {P1,P2,P3,P4};
 	Product[] L3 = {P1,P2,P3,P4};
 	
-	@Before
-	public void setUp() throws Exception {
-	}
-
 	@Test
-	void testSortAsin() {
+	public void testSortAsin() {
 		Sort.sortAsin(L2, 4);
 		assertTrue(isSorted(L2, 'A'));
 	}
 	
 	@Test
-	void testSortTitle() {
+	public void testSortTitle() {
 		Sort.sortTitle(L2, 4);
 		assertTrue(isSorted(L2, 'T'));
 	}
 	
 	@Test
-	void testSortRating() {
+	public void testSortRating() {
 		Sort.sortRating(L3, 4);
 		assertTrue(isSorted(L3, 'R'));
 	}
-
-
 }

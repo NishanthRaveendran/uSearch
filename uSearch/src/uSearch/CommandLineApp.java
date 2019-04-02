@@ -2,7 +2,7 @@ package uSearch;
 
 import java.util.Scanner;
 
-//Main app
+//Main command line app
 public class CommandLineApp {
 
 	public static void main(String[] args) throws Exception {		
@@ -64,6 +64,7 @@ public class CommandLineApp {
 		reader.close();		
 	}
 	
+	//Print similar products
 	private static void printAlternatives(Product[] products) {
 		String [] temp = {"None available","None available","None available"};
 		int j = 0;
@@ -79,6 +80,7 @@ public class CommandLineApp {
 		}
 	}
 	
+	//Print reviews
 	private static void printReviews(Review[] reviews, String input) {
 		String[] temp = {"None available", "None available", "None available"};
 		int j = 0;
@@ -96,6 +98,7 @@ public class CommandLineApp {
 		}
 	}
 	
+	//Get index of a product using the product asin
 	private static int indexOfProduct(Product[] products, String asin) {
 		for(int i = 0; i < products.length; i++) {
 			if(products[i].getAsin().equals(asin)) return i;

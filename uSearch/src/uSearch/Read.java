@@ -7,7 +7,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
+/**
+ * Library of functions to read the file and produce a list of strings
+ */
 public class Read {
+	
+	/**
+	 * Used to read a string of data line by line 
+	 * 
+	 * @param path String path to the file with data 
+	 * @param size int size of the dataset (number of rows)
+	 * @return List of strings extracted from the file
+	 */
 	public static String[] readData(String path, int size) throws Exception {
 		String[] products = new String[size];
 

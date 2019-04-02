@@ -4,21 +4,23 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * class representing a graph of connection between a source product.
+ */
 public class Graph {
-	
-	private static int indexOfProduct(Product[] products, String asin) {
-		for(int i = 0; i < products.length; i++) {
-			if(products[i].getAsin().equals(asin)) return i;
-		}
-		return -1;
-	}
 	
 	private boolean[] marked;
 	private int[] edgeTo;
 	private int sourceIndex;
 	private Product[] products;
-	public int max;
+	private int max;
 	
+	/**
+	 * Used to create connected graph for a source product 
+	 * 
+	 * @param products List of products 
+	 * @param sourceIndex Index of the source product 
+	 */
 	public Graph(Product[] products, int sourceIndex) {
 		marked = new boolean[products.length];
 		edgeTo = new int[products.length];
@@ -26,6 +28,19 @@ public class Graph {
 		this.products = products;
 		this.max = 10;
 		bfs(sourceIndex);
+	}
+	
+	/**
+	 * Used to get connected products to the source product
+	 * 
+	 * @return List of connected products
+	 */
+	public Product[] connectedProducts(){
+		ArrayList<Product> connected = new ArrayList<Product>();
+		for(int i = 0; i < marked.length; i++) {
+			if(marked[i]) connected.add(this.products[i]);
+		}		
+		return connected.toArray(new Product[connected.size()]);
 	}
 	
 	//Implementation of the bfs
@@ -50,11 +65,11 @@ public class Graph {
 		}				
 	}
 	
-	public Product[] connectedProducts(){
-		ArrayList<Product> connected = new ArrayList<Product>();
-		for(int i = 0; i < marked.length; i++) {
-			if(marked[i]) connected.add(this.products[i]);
-		}		
-		return connected.toArray(new Product[connected.size()]);
+	//Get index of a product using the product asin
+	private static int indexOfProduct(Product[] products, String asin) {
+		for(int i = 0; i < products.length; i++) {
+			if(products[i].getAsin().equals(asin)) return i;
+		}
+		return -1;
 	}
 }

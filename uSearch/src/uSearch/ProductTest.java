@@ -1,16 +1,10 @@
 package uSearch;
 
 import static org.junit.Assert.*;
-
-import org.junit.Before;
 import org.junit.Test;
 
 public class ProductTest {
 
-	@Before
-	public void setUp() throws Exception {
-	}
-	
 	@Test
 	public void testProductData() {
 		String[] similar1 = { "Product1", "Product2" };
@@ -54,5 +48,4 @@ public class ProductTest {
 		assertTrue(product2.compareRating(product1) > 0);
 		assertTrue(product3.compareRating(product1) < 0);
 	}
-
 }

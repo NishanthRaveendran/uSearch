@@ -1,3 +1,5 @@
+package uSearch;
+
 import java.awt.EventQueue;
 import java.io.BufferedReader;
 import java.io.File;

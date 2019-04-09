@@ -1,0 +1,7 @@
+Download the data set from the google drive and put it in this folder to run the app.
+
+productdata2.txt - Dataset for the products
+https://drive.google.com/open?id=1P-vrH1h6YgQXcYnMv7RJZ6mCRwPDXYww
+
+CDs_and_Vinyl_5.json - Dataset for the reviews
+https://drive.google.com/open?id=1vzvDXGf1MBfvPzBv2YpEDBnP9ID9A-NJ
